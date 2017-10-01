@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="MilleniumFalconBacktracking"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/esteban/MilleniumFalconBacktracking/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/esteban/MilleniumFalconBacktracking/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/esteban/MilleniumFalconBacktracking/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MilleniumFalconBacktracking">
+				<Option output="/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/MilleniumFalconBacktracking" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/esteban/MilleniumFalconBacktracking/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/Cellar/allegro/5.2.1.1_1/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 MilleniumFalconBacktracking"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MilleniumFalconBacktracking/fast">
+				<Option output="/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/MilleniumFalconBacktracking" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/esteban/MilleniumFalconBacktracking/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/Cellar/allegro/5.2.1.1_1/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 MilleniumFalconBacktracking/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/esteban/MilleniumFalconBacktracking/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Asteroide.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Asteroide.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Backtracking.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Backtracking.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/DeathStar.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/DeathStar.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Entidad.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Entidad.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Falcon.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Falcon.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/ListNode.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Lista.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Mapa.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Mapa.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Matrix.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Node.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Node.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/PList.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Sprite.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Sprite.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Tiled.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/Tiled.h">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/main.cpp">
+			<Option target="MilleniumFalconBacktracking"/>
+		</Unit>
+		<Unit filename="/home/esteban/MilleniumFalconBacktracking/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
