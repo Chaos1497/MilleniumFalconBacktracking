@@ -25,11 +25,11 @@ ALLEGRO_BITMAP *player_sprite;
 ALLEGRO_KEYBOARD_STATE keyState;
 Mapa *zone;
 Falcon *falcon;
-Asteroide *asteroide1, *asteroide2,*asteroide3, *asteroide4, *asteroide5, *asteroide6, *asteroide7, *asteroide8, *asteroide9, *asteroide10, *asteroide11, *asteroide12, *asteroide13,*asteroide14, *asteroide15, *asteroide16,  *asteroide17, *asteroide18, *asteroide19, *asteroide20, *asteroide21, *asteroide22;
+Asteroide *asteroide1, *asteroide2,*asteroide3, *asteroide4, *asteroide5, *asteroide6, *asteroide7, *asteroide8, *asteroide9, *asteroide10, *asteroide11, *asteroide12, *asteroide13,*asteroide14, *asteroide15, *asteroide16,  *asteroide17, *asteroide18, *asteroide19, *asteroide20, *asteroide21;
 DeathStar *estrella;
 Backtracking *backtracking;
 int** zoneSolids = new int*[2];//Da los sólidos de la zona
-int padondevaFila = 5, padondevaColumna = 13;
+int padondevaFila = 9, padondevaColumna = 13;
 // /Constantes definidas (Colores, dimensiones, medidas, entre otros)
 #define screen_width 850
 #define screen_height 600
@@ -43,316 +43,7 @@ void calculateBack(Entity *entity, Mapa *map){
             zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
         }
     }
-
     PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), padondevaFila, padondevaColumna);
-
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack1(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 4, 0);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack2(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 6, 1);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack3(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 3, 2);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack4(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 8, 3);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack5(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 5, 4);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack6(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 1, 4);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack7(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 7, 6);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack8(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 4, 6);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack9(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 2, 7);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack10(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 6, 8);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack11(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 0, 8);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack12(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 4, 9);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack13(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 8, 10);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack14(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 1, 10);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack15(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 6, 12);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack16(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 3, 12);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack17(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 1, 13);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-void calculateBack18(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 9, 7);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack19(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 9, 13);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack20(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 7, 14);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack21(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 9, 0);
-    for (int m = 0; m < back.size(); ++m) {
-        cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
-        entity->moveAt(back.get(m).get(0),back.get(m).get(1));
-    }
-}
-
-void calculateBack22(Entity *entity, Mapa *map){
-    for (int r = 0; r < 2; ++r) {
-        for (int c = 0; c < 10; ++c) {
-            zoneSolids[r][c] = map->getTiledAt(r,c).getIsSolid();
-        }
-    }
-
-    PList<PList<int>> back = backtracking->getBack(zoneSolids, map->getRows(), map->getColumns(), entity->getCurrentRow(), entity->getCurrentColumn(), 0, 0);
     for (int m = 0; m < back.size(); ++m) {
         cout << back.get(m).get(0) << " " << back.get(m).get(1) << endl;
         entity->moveAt(back.get(m).get(0),back.get(m).get(1));
@@ -364,7 +55,7 @@ void initialize(){
     al_init();//Inicia componentes básicos para usar alegro
     al_init_font_addon();//Inicializa los formato de letra
     al_init_ttf_addon();//Inicializa los archivos de tipos de letras
-    al_init_primitives_addon();//Inicializa formas primitivas(rectángulos, triángulos, círculos, entre otros)
+    al_init_primitives_addon();//Inicializa formas primitivas
     al_install_keyboard();//Inicializa el teclado
     al_init_image_addon();//Inicializa imagenes
     backtracking = new Backtracking();
@@ -388,169 +79,37 @@ void initialize(){
     zone->addBitmap("Fondo.png");
     zone->setBackground(map,',','/');
 
-    falcon = new Falcon("MilleniumFalcon.png", 2, 1, 50, 50, zone);
+    falcon = new Falcon("MilleniumFalcon.png", 2, 0, 50, 50, zone);
     falcon->addAnimation("RIGHT",0,4);
     falcon->addAnimation("LEFT",1,4);
     falcon->addAnimation("DOWN",2,4);
     falcon->addAnimation("UP",3,4);
 
-    asteroide1 = new Asteroide("Asteroide.png", 5, 0, 40, 40, zone);
-    asteroide1->addAnimation("RIGHT",0,4);
-    asteroide1->addAnimation("LEFT",1,4);
-    asteroide1->addAnimation("DOWN",2,4);
-    asteroide1->addAnimation("UP",3,4);
+    asteroide1 = new Asteroide("Asteroide.png", 0, 1, 40, 40, zone);
+    asteroide2 = new Asteroide("Asteroide.png", 4, 0, 40, 40, zone);
+    asteroide3 = new Asteroide("Asteroide.png", 9, 0, 40, 40, zone);
+    asteroide4 = new Asteroide("Asteroide.png", 6, 1, 40, 40, zone);
+    asteroide5 = new Asteroide("Asteroide.png", 3, 2, 40, 40, zone);
+    asteroide6 = new Asteroide("Asteroide.png", 8, 3, 40, 40, zone);
+    asteroide7 = new Asteroide("Asteroide.png", 5, 4, 40, 40, zone);
+    asteroide8 = new Asteroide("Asteroide.png", 1, 4, 40, 40, zone);
+    asteroide9 = new Asteroide("Asteroide.png", 4, 6, 40, 40, zone);
+    asteroide10 = new Asteroide("Asteroide.png", 7, 6, 40, 40, zone);
+    asteroide11 = new Asteroide("Asteroide.png", 9, 7, 40, 40, zone);
+    asteroide12 = new Asteroide("Asteroide.png", 2, 7, 40, 40, zone);
+    asteroide13 = new Asteroide("Asteroide.png", 0, 8, 40, 40, zone);
+    asteroide14 = new Asteroide("Asteroide.png", 6, 8, 40, 40, zone);
+    asteroide15 = new Asteroide("Asteroide.png", 4, 9, 40, 40, zone);
+    asteroide16 = new Asteroide("Asteroide.png", 1, 10, 40, 40, zone);
+    asteroide17 = new Asteroide("Asteroide.png", 8, 10, 40, 40, zone);
+    asteroide18 = new Asteroide("Asteroide.png", 6, 12, 40, 40, zone);
+    asteroide19 = new Asteroide("Asteroide.png", 3, 12, 40, 40, zone);
+    asteroide20 = new Asteroide("Asteroide.png", 1, 13, 40, 40, zone);
+    asteroide21 = new Asteroide("Asteroide.png", 5, 14, 40, 40, zone);
 
-    asteroide2 = new Asteroide("Asteroide.png", 7, 1, 40, 40, zone);
-    asteroide2->addAnimation("RIGHT",0,4);
-    asteroide2->addAnimation("LEFT",1,4);
-    asteroide2->addAnimation("DOWN",2,4);
-    asteroide2->addAnimation("UP",3,4);
-
-    asteroide3 = new Asteroide("Asteroide.png", 4, 2, 40, 40, zone);
-    asteroide3->addAnimation("RIGHT",0,4);
-    asteroide3->addAnimation("LEFT",1,4);
-    asteroide3->addAnimation("DOWN",2,4);
-    asteroide3->addAnimation("UP",3,4);
-
-    asteroide4 = new Asteroide("Asteroide.png", 9, 3, 40, 40, zone);
-    asteroide4->addAnimation("RIGHT",0,4);
-    asteroide4->addAnimation("LEFT",1,4);
-    asteroide4->addAnimation("DOWN",2,4);
-    asteroide4->addAnimation("UP",3,4);
-
-    asteroide5 = new Asteroide("Asteroide.png", 6, 4, 40, 40, zone);
-    asteroide5->addAnimation("RIGHT",0,4);
-    asteroide5->addAnimation("LEFT",1,4);
-    asteroide5->addAnimation("DOWN",2,4);
-    asteroide5->addAnimation("UP",3,4);
-
-    asteroide6 = new Asteroide("Asteroide.png", 2, 4, 40, 40, zone);
-    asteroide6->addAnimation("RIGHT",0,4);
-    asteroide6->addAnimation("LEFT",1,4);
-    asteroide6->addAnimation("DOWN",2,4);
-    asteroide6->addAnimation("UP",3,4);
-
-    asteroide7 = new Asteroide("Asteroide.png", 8, 6, 40, 40, zone);
-    asteroide7->addAnimation("RIGHT",0,4);
-    asteroide7->addAnimation("LEFT",1,4);
-    asteroide7->addAnimation("DOWN",2,4);
-    asteroide7->addAnimation("UP",3,4);
-
-    asteroide8 = new Asteroide("Asteroide.png", 5, 6, 40, 40, zone);
-    asteroide8->addAnimation("RIGHT",0,4);
-    asteroide8->addAnimation("LEFT",1,4);
-    asteroide8->addAnimation("DOWN",2,4);
-    asteroide8->addAnimation("UP",3,4);
-
-    asteroide9 = new Asteroide("Asteroide.png", 3, 7, 40, 40, zone);
-    asteroide9->addAnimation("RIGHT",0,4);
-    asteroide9->addAnimation("LEFT",1,4);
-    asteroide9->addAnimation("DOWN",2,4);
-    asteroide9->addAnimation("UP",3,4);
-
-    asteroide10 = new Asteroide("Asteroide.png", 7, 8, 40, 40, zone);
-    asteroide10->addAnimation("RIGHT",0,4);
-    asteroide10->addAnimation("LEFT",1,4);
-    asteroide10->addAnimation("DOWN",2,4);
-    asteroide10->addAnimation("UP",3,4);
-
-    asteroide11 = new Asteroide("Asteroide.png", 1, 8, 40, 40, zone);
-    asteroide11->addAnimation("RIGHT",0,4);
-    asteroide11->addAnimation("LEFT",1,4);
-    asteroide11->addAnimation("DOWN",2,4);
-    asteroide11->addAnimation("UP",3,4);
-
-    asteroide12 = new Asteroide("Asteroide.png", 5, 9, 40, 40, zone);
-    asteroide12->addAnimation("RIGHT",0,4);
-    asteroide12->addAnimation("LEFT",1,4);
-    asteroide12->addAnimation("DOWN",2,4);
-    asteroide12->addAnimation("UP",3,4);
-
-    asteroide13 = new Asteroide("Asteroide.png", 9, 10, 40, 40, zone);
-    asteroide13->addAnimation("RIGHT",0,4);
-    asteroide13->addAnimation("LEFT",1,4);
-    asteroide13->addAnimation("DOWN",2,4);
-    asteroide13->addAnimation("UP",3,4);
-
-    asteroide14 = new Asteroide("Asteroide.png", 2, 10, 40, 40, zone);
-    asteroide14->addAnimation("RIGHT",0,4);
-    asteroide14->addAnimation("LEFT",1,4);
-    asteroide14->addAnimation("DOWN",2,4);
-    asteroide14->addAnimation("UP",3,4);
-
-    asteroide15 = new Asteroide("Asteroide.png", 7, 12, 40, 40, zone);
-    asteroide15->addAnimation("RIGHT",0,4);
-    asteroide15->addAnimation("LEFT",1,4);
-    asteroide15->addAnimation("DOWN",2,4);
-    asteroide15->addAnimation("UP",3,4);
-
-    asteroide16 = new Asteroide("Asteroide.png", 4, 12, 40, 40, zone);
-    asteroide16->addAnimation("RIGHT",0,4);
-    asteroide16->addAnimation("LEFT",1,4);
-    asteroide16->addAnimation("DOWN",2,4);
-    asteroide16->addAnimation("UP",3,4);
-
-    asteroide17 = new Asteroide("Asteroide.png", 3, 13, 40, 40, zone);
-    asteroide17->addAnimation("RIGHT",0,4);
-    asteroide17->addAnimation("LEFT",1,4);
-    asteroide17->addAnimation("DOWN",2,4);
-    asteroide17->addAnimation("UP",3,4);
-
-    asteroide18 = new Asteroide("Asteroide.png", 9, 8, 40, 40, zone);
-    asteroide18->addAnimation("RIGHT",0,4);
-    asteroide18->addAnimation("LEFT",1,4);
-    asteroide18->addAnimation("DOWN",2,4);
-    asteroide18->addAnimation("UP",3,4);
-
-    asteroide19 = new Asteroide("Asteroide.png", 9, 14, 40, 40, zone);
-    asteroide19->addAnimation("RIGHT",0,4);
-    asteroide19->addAnimation("LEFT",1,4);
-    asteroide19->addAnimation("DOWN",2,4);
-    asteroide19->addAnimation("UP",3,4);
-
-    asteroide20 = new Asteroide("Asteroide.png", 8, 14, 40, 40, zone);
-    asteroide20->addAnimation("RIGHT",0,4);
-    asteroide20->addAnimation("LEFT",1,4);
-    asteroide20->addAnimation("DOWN",2,4);
-    asteroide20->addAnimation("UP",3,4);
-
-    asteroide21 = new Asteroide("Asteroide.png", 9, 1, 40, 40, zone);
-    asteroide21->addAnimation("RIGHT",0,4);
-    asteroide21->addAnimation("LEFT",1,4);
-    asteroide21->addAnimation("DOWN",2,4);
-    asteroide21->addAnimation("UP",3,4);
-
-    asteroide22 = new Asteroide("Asteroide.png", 1, 0, 40, 40, zone);
-    asteroide22->addAnimation("RIGHT",0,4);
-    asteroide22->addAnimation("LEFT",1,4);
-    asteroide22->addAnimation("DOWN",2,4);
-    asteroide22->addAnimation("UP",3,4);
-
-    estrella = new DeathStar("DeathStar.png",5,14,80,80,zone);
+    estrella = new DeathStar("DeathStar.png",9,14,80,80,zone);
 
     calculateBack(falcon,zone);
-    calculateBack1(asteroide1,zone);
-    calculateBack2(asteroide2,zone);
-    calculateBack3(asteroide3,zone);
-    calculateBack4(asteroide4,zone);
-    calculateBack5(asteroide5,zone);
-    calculateBack6(asteroide6,zone);
-    calculateBack7(asteroide7,zone);
-    calculateBack8(asteroide8,zone);
-    calculateBack9(asteroide9,zone);
-    calculateBack10(asteroide10,zone);
-    calculateBack11(asteroide11,zone);
-    calculateBack12(asteroide12,zone);
-    calculateBack13(asteroide13,zone);
-    calculateBack14(asteroide14,zone);
-    calculateBack15(asteroide15,zone);
-    calculateBack16(asteroide16,zone);
-    calculateBack17(asteroide17,zone);
-    calculateBack18(asteroide18,zone);
-    calculateBack19(asteroide19,zone);
-    calculateBack20(asteroide20,zone);
-    calculateBack21(asteroide21,zone);
-    calculateBack22(asteroide22,zone);
 }
 
 //Manejador de eventos. Aquí se establecen y administran eventos de teclado, mouse, display, entre otros.
@@ -580,6 +139,7 @@ int main() {
         al_get_keyboard_state(&keyState);
         eventsHandler();
         zone->draw();
+        falcon->draw();
         asteroide1->draw();
         asteroide2->draw();
         asteroide3->draw();
@@ -601,9 +161,7 @@ int main() {
         asteroide19->draw();
         asteroide20->draw();
         asteroide21->draw();
-        asteroide22->draw();
         estrella->draw();
-        falcon->draw();
         loop();
     }
     al_destroy_display(display);

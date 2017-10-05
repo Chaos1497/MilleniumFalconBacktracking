@@ -10,7 +10,7 @@ private:
     Node*** _nodeMap;
     PList<Node*>* _openSet;
     PList<Node*>* _closeSet;
-    PList<Node*>* _path;
+    PList<Node*>* _back;
 
     //Methods
     double calculateHeuristics(Node*, Node*);

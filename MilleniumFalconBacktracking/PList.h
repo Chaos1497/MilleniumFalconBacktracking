@@ -33,9 +33,7 @@ template <class Type> PList<Type>::PList() {
     this->_size = 0;
 }
 
-template <class Type> PList<Type>::~PList() {
-    //?????
-}
+template <class Type> PList<Type>::~PList() {}
 
 template <class Type> int PList<Type>::insert(Type pData) {
 

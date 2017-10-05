@@ -12,10 +12,7 @@ Node::Node(int pPosI, int pPosJ, bool pWall) {
     this->_neighbors = new PList<Node*>();
 
 }
-Node::~Node() {
-    //?????
-}
-
+Node::~Node() {}
 
 int Node::getPosI() const{
     return this->_posI;

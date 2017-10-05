@@ -5,8 +5,7 @@
 #include "Entidad.h"
 
 class Asteroide : public Entity{
-private:
-    List<Falcon*> *targets;
+
 public:
     Asteroide(char* resource,int row, int column, int width, int height, Mapa *m);
     ~Asteroide();
