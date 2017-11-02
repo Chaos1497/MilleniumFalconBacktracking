@@ -1,5 +1,5 @@
-#ifndef MILLENNIUMFALCONBACKTRACKING_PATHFINDING_H
-#define MILLENNIUMFALCONBACKTRACKING_PATHFINDING_H
+#ifndef MILLENNIUMFALCONBACKTRACKING_H
+#define MILLENNIUMFALCONBACKTRACKING_H
 #include <iostream>
 #include "Node.h"
 #include <cmath>
@@ -13,7 +13,7 @@ private:
     PList<Node*>* _back;
 
     //Methods
-    double calculateHeuristics(Node*, Node*);
+    double Heuristics(Node*, Node*);
     bool inOpenSet(Node*);
     bool inCloseSet(Node*);
     void initiateNodesMap(int**, int, int);
@@ -24,4 +24,4 @@ public:
     PList<PList<int>> getBack(int**, int, int, int, int, int, int);
 };
 
-#endif //MILLENNIUMFALCONBACKTRACKING_PATHFINDING_H
+#endif //MILLENNIUMFALCONBACKTRACKING_H

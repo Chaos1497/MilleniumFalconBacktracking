@@ -14,8 +14,7 @@
 
 using namespace std;
 
-bool run=true;//Booleano que ejecuta el loop
-
+bool run=true;
 ALLEGRO_DISPLAY *display;//Variable global ventana, se utiliza para mostrar el juego
 ALLEGRO_EVENT_QUEUE *event_queue;//Variable de la cola de eventos
 ALLEGRO_FONT *font;

@@ -8,7 +8,7 @@ Backtracking::Backtracking() {
 
 Backtracking::~Backtracking() {}
 
-double Backtracking::calculateHeuristics(Node* pStartNode, Node* pEndNode) {
+double Backtracking::Heuristics(Node* pStartNode, Node* pEndNode) {
     int x = pEndNode->getPosI() - pStartNode->getPosI();
     int y = pEndNode->getPosJ() - pStartNode->getPosJ();
     return std::sqrt((x*x) + (y*y));
@@ -30,19 +30,16 @@ bool Backtracking::inCloseSet(Node* pNode) {
     return false;
 }
 
-void Backtracking::initiateNodesMap(int** pMap, int pRows, int pColumns) {
-    //Create the array of nodes
+void Backtracking::initiateNodesMap(int** pMap, int pRows, int pColumns){
     this->_nodeMap = new Node**[pRows];
     for(int i = 0; i < pRows; i++) {
         this->_nodeMap[i] = new Node*[pColumns];
     }
-    //Fill the matrix with nodes
     for(int i = 0; i < pRows; i++) {
         for(int j = 0; j < pColumns; j++) {
             this->_nodeMap[i][j] = new Node(i, j, pMap[i][j]);
         }
     }
-    //Established the neighbors of each node in the matrix
     for(int i = 0; i < pRows; i++) {
         for(int j = 0; j < pColumns; j++) {
             this->_nodeMap[i][j]->addNeighbors(this->_nodeMap, pRows, pColumns);
@@ -64,7 +61,7 @@ PList<PList<int>> Backtracking::getBack(int** pMap, int pRows, int pColumns, int
     while(this->_openSet->size() > 0) {
         int bestNodePosition = 0;
         for(int i = 0; i < this->_openSet->size(); i++) {
-            if(this->_openSet->get(i)->getCostF() < this->_openSet->get(bestNodePosition)->getCostF())
+            if(this->_openSet->get(i)->getTotal() < this->_openSet->get(bestNodePosition)->getTotal())
                 bestNodePosition = i;
         }
         Node* currentNode = this->_openSet->get(bestNodePosition);
@@ -72,6 +69,7 @@ PList<PList<int>> Backtracking::getBack(int** pMap, int pRows, int pColumns, int
             Node* tempNode = currentNode;
             this->_back->insert(tempNode);
             while(tempNode->getPreviousNode()) {
+                cout<<tempNode;
                 this->_back->insert(tempNode->getPreviousNode());
                 tempNode = tempNode->getPreviousNode();
             }
@@ -81,17 +79,17 @@ PList<PList<int>> Backtracking::getBack(int** pMap, int pRows, int pColumns, int
         this->_closeSet->insert(currentNode);
         for(int i = 0; i < currentNode->getNeighbors()->size(); i++) {
             if(!(this->inCloseSet(currentNode->getNeighbors()->get(i))) && !(currentNode->getNeighbors()->get(i)->getWalkable())) {
-                int tmpCostG = currentNode->getCostG() + 1;
+                int tmpSigte = currentNode->getSigte() + 1;
                 if (this->inOpenSet(currentNode->getNeighbors()->get(i))) {
-                    if (tmpCostG < currentNode->getNeighbors()->get(i)->getCostG())
-                        currentNode->getNeighbors()->get(i)->setCostG(tmpCostG);
+                    if (tmpSigte < currentNode->getNeighbors()->get(i)->getSigte())
+                        currentNode->getNeighbors()->get(i)->setSigte(tmpSigte);
                 }
                 else {
-                    currentNode->getNeighbors()->get(i)->setCostG(tmpCostG);
+                    currentNode->getNeighbors()->get(i)->setSigte(tmpSigte);
                     this->_openSet->insert(currentNode->getNeighbors()->get(i));
                 }
-                currentNode->getNeighbors()->get(i)->setCostH(this->calculateHeuristics(currentNode->getNeighbors()->get(i), endNode));
-                currentNode->getNeighbors()->get(i)->setCostF((currentNode->getNeighbors()->get(i)->getCostG() + currentNode->getNeighbors()->get(i)->getCostH()));
+                currentNode->getNeighbors()->get(i)->setSalto(this->Heuristics(currentNode->getNeighbors()->get(i), endNode));
+                currentNode->getNeighbors()->get(i)->setCostLast((currentNode->getNeighbors()->get(i)->getSigte() + currentNode->getNeighbors()->get(i)->getLast()));
                 currentNode->getNeighbors()->get(i)->setPreviousNode(currentNode);
             }
         }

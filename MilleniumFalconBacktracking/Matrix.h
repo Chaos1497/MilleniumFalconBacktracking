@@ -27,9 +27,9 @@ template<class t_data> Matrix<t_data>::Matrix(int height, int width){
 
 template<class t_data> void Matrix<t_data>::setMatrix() {
     for (int i = 0; i < height; ++i) {
-        List<t_data> *colum = new List<t_data>;
-        colum->Add(width);
-        matrix->Insert(colum);
+        List<t_data> *column = new List<t_data>;
+        column->Add(width);
+        matrix->Insert(column);
     }
 }
 

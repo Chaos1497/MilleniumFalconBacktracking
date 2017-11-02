@@ -10,9 +10,9 @@ private:
     int _posI;
     int _posJ;
     bool _walkable;
-    int _costG;
-    double _costH;
-    double _costF;
+    int _costSigte;
+    double _last;
+    double _total;
     Node* _previous;
     PList<Node*>* _neighbors;
 
@@ -30,14 +30,14 @@ public:
     bool getWalkable() const;
     void setWalkable(bool);
 
-    int getCostG() const;
-    void setCostG(int);
+    int getSigte() const;
+    void setSigte(int);
 
-    double getCostH() const;
-    void setCostH(double);
+    double getLast() const;
+    void setSalto(double);
 
-    double getCostF() const;
-    void setCostF(double);
+    double getTotal() const;
+    void setCostLast(double);
 
     Node* getPreviousNode() const;
     void setPreviousNode(Node*);
